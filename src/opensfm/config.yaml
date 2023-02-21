@@ -1,0 +1,44 @@
+# OpenSfM will use the default parameters from opensfm/config.py
+# Set here any parameter that you want to override for this dataset
+# For example:
+processes: 8                 # Number of threads to use
+#depthmap_min_consistent_views: 2      # Min number of views that should reconstruct a point for it to be valid
+#depthmap_save_debug_files: yes        # Save debug files with partial reconstruction results
+#feature_process_size: 1024
+#bundle_use_gcp: yes
+
+feature_type: SIFT           # Feature type (AKAZE, SURF, SIFT, HAHOG, ORB)
+feature_min_frames: 4000      # If fewer frames are detected, sift_peak_threshold/surf_hessian_threshold is reduced.
+feature_process_size: 2048    # Resize the image if its size is larger than specified. Set to -1 for original size
+
+sift_edge_threshold: 15       # See OpenCV doc
+
+# Params for matching
+matching_order_neighbors: 0           # Number of images to match selected by image name. Set to 0 to disable
+
+# Params for geometric estimation
+#robust_matching_threshold: 0.004       # Outlier threshold for fundamental matrix estimation as portion of image width
+#robust_matching_calib_threshold: 0.004 # Outlier threshold for essential matrix estimation during matching in radians
+#robust_matching_min_match: 20          # Minimum number of matches to accept matches between two images
+#five_point_algo_threshold: 0.004       # Outlier threshold for essential matrix estimation during incremental reconstruction in radians
+#five_point_algo_min_inliers: 20        # Minimum number of inliers for considering a two view reconstruction valid
+#triangulation_threshold: 0.006         # Outlier threshold for accepting a triangulated point in radians
+triangulation_min_ray_angle: 3.0        # Minimum angle between views to accept a triangulated point
+#triangulation_type: FULL              # Triangulation type : either considering all rays (FULL), or sing a RANSAC variant (ROBUST)
+#resection_threshold: 0.004             # Outlier threshold for resection in radians
+#resection_min_inliers: 10              # Minimum number of resection inliers to accept it
+
+# Params for bundle adjustment
+#radial_distorsion_k1_sd: 0.00005 #0.01   # The standard deviation of the first radial distortion parameter
+#radial_distorsion_k2_sd: 0.00005 #0.01   # The standard deviation of the second radial distortion parameter
+#radial_distorsion_k3_sd: 0.00005 #0.01   # The standard deviation of the third radial distortion parameter
+#radial_distorsion_p1_sd: 0.00005 #0.01   # The standard deviation of the first tangential distortion parameter
+#radial_distorsion_p2_sd: 0.00005 #0.01   # The standard deviation of the second tangential distortion parameter
+
+retriangulation: yes                # Retriangulate all points from time to time
+retriangulation_ratio: 1.2          # Retriangulate when the number of points grows by this ratio
+bundle_interval: 999999             # Bundle after adding 'bundle_interval' cameras
+bundle_new_points_ratio: 1.15        # Bundle when the number of points grows by this ratio
+local_bundle_radius: 1              # Max image graph distance for images to be included in local bundle adjustment
+local_bundle_min_common_points: 20  # Minimum number of common points betwenn images to be considered neighbors
+local_bundle_max_shots: 30          # Max number of shots to optimize during local bundle adjustment
