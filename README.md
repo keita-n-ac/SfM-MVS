@@ -6,7 +6,7 @@ qiita記事
 における，テスト画像データと，自動実行スクリプトとなります．
 
 # 使い方
-2つのqiita記事と以下のYoutubeをご覧ください．
+2つのqiita記事と以下のYoutube（サムネイルをクリック）をご覧ください．
 
 
 [![使用方法](https://img.youtube.com/vi/zKJP_eKZiFs/0.jpg)](https://www.youtube.com/watch?v=zKJP_eKZiFs)
