@@ -1,7 +1,7 @@
 # はじめに
 qiita記事
 - https://qiita.com/keita-n-ac/items/06f4214c7ae3292c5e44 : 環境構築
-- https://qiita.com/keita-n-ac/items/b1f0d36c489d30b52979 : 実行方向
+- https://qiita.com/keita-n-ac/items/b1f0d36c489d30b52979 : 実行方法
 
 における，テスト画像データと，自動実行スクリプトとなります．
 
